@@ -1,1 +1,1 @@
-# CleanSwift
+Clean Swift architecture template
