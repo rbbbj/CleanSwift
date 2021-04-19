@@ -11,16 +11,16 @@ target 'CleanSwift' do
   pod 'NVActivityIndicatorView'
   pod 'NVActivityIndicatorView/Extended'
   pod 'Alamofire', '~> 5.2'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '4.4.1'
   pod 'SwiftMessages'
 
   #  #  #  #  #  Useful pods most likely be used in the future #  #  #  #  #
-  #  pod 'IQKeyboardManagerSwift'
-  #  pod 'RxSwift'
-  #  pod 'RxCocoa'
-  #  pod 'RxRealm'
-  #  pod 'SwiftDate'
-  #  pod 'SnapKit'
+#  pod 'IQKeyboardManagerSwift'
+#  pod 'RxSwift'
+#  pod 'RxCocoa'
+#  pod 'RxRealm'
+#  pod 'SwiftDate'
+#  pod 'SnapKit'
 
   target 'CleanSwiftTests' do
     inherit! :search_paths
