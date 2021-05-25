@@ -10,7 +10,13 @@ class UsersService {
                 case .success:
                     if let jsonData = response.data {
                         do {
-                            let users = try JSONDecoder().decode([User].self, from: jsonData)
+                            let usersResponse = try JSONDecoder().decode([UserResponse].self, from: jsonData)
+                            var users = [User]()
+                            usersResponse.forEach {
+                                if let user = try? User(from: $0) {
+                                    users.append(user)
+                                }
+                            }
                             completionHandler(users, nil)
                         } catch {
                             debugPrint("Decoding in getAllComments() failed with error: \(error.localizedDescription)")

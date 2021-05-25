@@ -5,8 +5,8 @@ class UsersServiceMock: UsersService {
     override func fetchUsers(completionHandler: @escaping (_ users: [User]?, _ error: Error?) -> Void) {
         let json = """
         [
-          {
-            "id": 1,
+                  {
+                    "id": 1,
             "name": "Leanne Graham TEST",
             "username": "Bret",
             "email": "Sincere@april.biz",
@@ -244,7 +244,13 @@ class UsersServiceMock: UsersService {
         }
 
         do {
-            let users = try JSONDecoder().decode([User].self, from: data)
+            let usersResponse = try JSONDecoder().decode([UserResponse].self, from: data)
+            var users = [User]()
+            usersResponse.forEach {
+                if let user = try? User(from: $0) {
+                    users.append(user)
+                }
+            }
             completionHandler(users, nil)
         } catch {
             completionHandler(nil, CustomError.dataError)

@@ -1,4 +1,12 @@
-extension Address: Decodable {
+struct AddressResponse {
+    let street: String?
+    let suite: String?
+    let city: String?
+    let zipcode: String?
+    let geo: LocationResponse?
+}
+
+extension AddressResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case street
         case suite
@@ -14,7 +22,6 @@ extension Address: Decodable {
         suite = try container.decodeIfPresent(String.self, forKey: .suite)
         city = try container.decodeIfPresent(String.self, forKey: .city)
         zipcode = try container.decodeIfPresent(String.self, forKey: .zipcode)
-        geo = try container.decode(Location.self, forKey: .geo)
+        geo = try container.decode(LocationResponse.self, forKey: .geo)
     }
 }
-

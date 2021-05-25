@@ -1,4 +1,10 @@
-extension Company: Decodable {
+struct CompanyResponse {
+    let name: String?
+    let catchPhrase: String?
+    let bs: String?
+}
+
+extension CompanyResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case name
         case catchPhrase
@@ -13,4 +19,3 @@ extension Company: Decodable {
         bs = try container.decodeIfPresent(String.self, forKey: .bs)
     }
 }
-

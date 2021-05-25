@@ -1,7 +1,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-protocol BaseDisplayLogic: class {
+protocol BaseDisplayLogic: AnyObject {
     func displayLoadingProgress()
     func displayError(viewModel: BaseModels.Error.ViewModel)
 }

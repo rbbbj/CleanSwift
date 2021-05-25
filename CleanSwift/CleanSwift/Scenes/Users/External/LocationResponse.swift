@@ -1,4 +1,9 @@
-extension Location: Decodable {
+struct LocationResponse {
+    let lat: String?
+    let lng: String?
+}
+
+extension LocationResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case lat
         case lng

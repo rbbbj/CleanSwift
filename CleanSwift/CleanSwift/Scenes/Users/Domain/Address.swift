@@ -17,6 +17,17 @@ struct Address {
         self.geo = geo
     }
     
+    init(from response: AddressResponse) throws {
+        self.street = response.street
+        self.suite = response.suite
+        self.city = response.city
+        self.zipcode = response.zipcode
+        guard let lat = (response.geo?.lat), let lng = (response.geo?.lng) else {
+            throw CustomError.dataError
+        }
+        self.geo = Location(lat: lat, lng: lng)
+    }
+
     init(from entity: RMAddress) throws {
         guard let street = entity.street,
             let suite = entity.suite,
@@ -25,7 +36,7 @@ struct Address {
             let geo = try entity.geo?.asDomain() else {
                 throw CustomError.dataError
         }
-        
+
         self.street = street
         self.suite = suite
         self.city = city

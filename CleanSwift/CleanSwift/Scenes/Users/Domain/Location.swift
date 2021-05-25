@@ -7,6 +7,11 @@ struct Location {
         self.lng = lng
     }
     
+    init(from response: LocationResponse) {
+        self.lat = response.lat
+        self.lng = response.lng
+    }
+    
     init(from entity: RMLocation) throws {
         guard let lat = entity.lat,
             let lng = entity.lng else {

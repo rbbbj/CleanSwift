@@ -1,4 +1,15 @@
-extension User: Decodable {
+struct UserResponse {
+    let id: Int?
+    let name: String?
+    let username: String?
+    let email: String?
+    let phone: String?
+    let website: String?
+    let address: AddressResponse?
+    let company: CompanyResponse?
+}
+
+extension UserResponse: Decodable {
     private enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -19,7 +30,7 @@ extension User: Decodable {
         email = try container.decodeIfPresent(String.self, forKey: .email)
         phone = try container.decodeIfPresent(String.self, forKey: .phone)
         website = try container.decodeIfPresent(String.self, forKey: .website)
-        address = try container.decode(Address.self, forKey: .address)
-        company = try container.decode(Company.self, forKey: .company)
+        address = try container.decode(AddressResponse.self, forKey: .address)
+        company = try container.decode(CompanyResponse.self, forKey: .company)
     }
 }

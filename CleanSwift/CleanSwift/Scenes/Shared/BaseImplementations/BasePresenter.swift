@@ -1,4 +1,4 @@
-protocol BasePresentationLogic: class {
+protocol BasePresentationLogic: AnyObject {
     func presentError()
     func presentError(response: BaseModels.Error.Response)
     func displayLoadingProgress()

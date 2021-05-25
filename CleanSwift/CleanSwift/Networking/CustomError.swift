@@ -1,8 +1,8 @@
 import Foundation
 
 enum CustomError: Error {
-    case customError(message: String)
     case dataError
+    case customError(message: String)
 }
 
 extension CustomError: LocalizedError {
