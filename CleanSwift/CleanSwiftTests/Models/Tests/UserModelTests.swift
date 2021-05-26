@@ -5,7 +5,7 @@ class UserModelTests: XCTestCase {
     
     // MARK: - Properties
 
-    var userModel: User!
+    var sut: User!
 
     // MARK: - Set Up & Tear Down
 
@@ -19,19 +19,20 @@ class UserModelTests: XCTestCase {
             }
         }
         
-        userModel = users.first
+        sut = users.first
     }
 
     override func tearDownWithError() throws {
-
+        sut = nil
+        try super.tearDownWithError()
     }
 
     // Tests
     
     func testSetNewUserPhone() throws {
-        userModel.set(phone: "1-770-736-8031 xXXXXX")
+        sut.set(phone: "1-770-736-8031 xXXXXX")
         
-        XCTAssertEqual(userModel.phone!, "1-770-736-8031 xXXXXX")
+        XCTAssertEqual(sut.phone!, "1-770-736-8031 xXXXXX")
     }
     
     func testSetNewUserAddress() throws {
@@ -41,13 +42,13 @@ class UserModelTests: XCTestCase {
                                  city: "testCity",
                                  zipcode: "testZipcode",
                                  geo: testLocation)
-        userModel.set(address: newAddress)
+        sut.set(address: newAddress)
         
-        XCTAssertEqual(userModel.address!.street!, "testStreet")
-        XCTAssertEqual(userModel.address!.suite!, "testSuite")
-        XCTAssertEqual(userModel.address!.city!, "testCity")
-        XCTAssertEqual(userModel.address!.zipcode!, "testZipcode")
-        XCTAssertEqual(userModel.address!.geo!.lat, "1.1111")
-        XCTAssertEqual(userModel.address!.geo!.lng, "2.2222")
+        XCTAssertEqual(sut.address!.street!, "testStreet")
+        XCTAssertEqual(sut.address!.suite!, "testSuite")
+        XCTAssertEqual(sut.address!.city!, "testCity")
+        XCTAssertEqual(sut.address!.zipcode!, "testZipcode")
+        XCTAssertEqual(sut.address!.geo!.lat, "1.1111")
+        XCTAssertEqual(sut.address!.geo!.lng, "2.2222")
     }
 }

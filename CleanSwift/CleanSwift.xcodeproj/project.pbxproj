@@ -158,6 +158,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		675D5713265ECAEB00AA7824 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67EF1849265ADB7D0085C29E /* Stubs */,
+				67EF1848265ADB7A0085C29E /* Helpers */,
+				67EF1847265ADB780085C29E /* Tests */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		678FAF6F24DD75D200EFD7FA = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +208,7 @@
 		678FAF9124DD75D500EFD7FA /* CleanSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				67EF1849265ADB7D0085C29E /* Stubs */,
-				67EF1848265ADB7A0085C29E /* Extensions */,
-				67EF1847265ADB780085C29E /* Models */,
-				678FAF9224DD75D500EFD7FA /* UserModelTests.swift */,
+				675D5713265ECAEB00AA7824 /* Models */,
 				678FAF9424DD75D500EFD7FA /* Info.plist */,
 			);
 			path = CleanSwiftTests;
@@ -367,19 +374,20 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		67EF1847265ADB780085C29E /* Models */ = {
+		67EF1847265ADB780085C29E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				678FAF9224DD75D500EFD7FA /* UserModelTests.swift */,
 			);
-			path = Models;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		67EF1848265ADB7A0085C29E /* Extensions */ = {
+		67EF1848265ADB7A0085C29E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				67EF184A265ADC240085C29E /* XCTestCase.swift */,
 			);
-			path = Extensions;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		67EF1849265ADB7D0085C29E /* Stubs */ = {
@@ -447,7 +455,7 @@
 		678FAF7024DD75D200EFD7FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Robertas Baronas";
 				TargetAttributes = {
