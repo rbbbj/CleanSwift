@@ -1,12 +1,11 @@
-//import RxSwift
 import Foundation
 
 class UsersServiceMock: UsersService {
     override func fetchUsers(completionHandler: @escaping (_ users: [User]?, _ error: Error?) -> Void) {
         let json = """
         [
-                  {
-                    "id": 1,
+        {
+            "id": 1,
             "name": "Leanne Graham TEST",
             "username": "Bret",
             "email": "Sincere@april.biz",
@@ -30,7 +29,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 2,
-            "name": "Ervin Howell",
+            "name": "Ervin Howell TEST",
             "username": "Antonette",
             "email": "Shanna@melissa.tv",
             "address": {
@@ -53,7 +52,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 3,
-            "name": "Clementine Bauch",
+            "name": "Clementine Bauch TEST",
             "username": "Samantha",
             "email": "Nathan@yesenia.net",
             "address": {
@@ -76,7 +75,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 4,
-            "name": "Patricia Lebsack",
+            "name": "Patricia Lebsack TEST",
             "username": "Karianne",
             "email": "Julianne.OConner@kory.org",
             "address": {
@@ -99,7 +98,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 5,
-            "name": "Chelsey Dietrich",
+            "name": "Chelsey Dietrich TEST",
             "username": "Kamren",
             "email": "Lucio_Hettinger@annie.ca",
             "address": {
@@ -122,7 +121,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 6,
-            "name": "Mrs. Dennis Schulist",
+            "name": "Mrs. Dennis Schulist TEST",
             "username": "Leopoldo_Corkery",
             "email": "Karley_Dach@jasper.info",
             "address": {
@@ -145,7 +144,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 7,
-            "name": "Kurtis Weissnat",
+            "name": "Kurtis Weissnat TEST",
             "username": "Elwyn.Skiles",
             "email": "Telly.Hoeger@billy.biz",
             "address": {
@@ -168,7 +167,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 8,
-            "name": "Nicholas Runolfsdottir V",
+            "name": "Nicholas Runolfsdottir V TEST",
             "username": "Maxime_Nienow",
             "email": "Sherwood@rosamond.me",
             "address": {
@@ -191,7 +190,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 9,
-            "name": "Glenna Reichert",
+            "name": "Glenna Reichert TEST",
             "username": "Delphine",
             "email": "Chaim_McDermott@dana.io",
             "address": {
@@ -214,7 +213,7 @@ class UsersServiceMock: UsersService {
           },
           {
             "id": 10,
-            "name": "Clementina DuBuque",
+            "name": "Clementina DuBuque TEST",
             "username": "Moriah.Stanton",
             "email": "Rey.Padberg@karina.biz",
             "address": {

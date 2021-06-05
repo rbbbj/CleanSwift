@@ -14,13 +14,11 @@ final class DependencyContainer {
     
     static func registerPersistanceObjects(container: Container) {
         container.autoregister(UsersRealmPersistable.self, initializer: UsersRealmRepository.init)
-        
         // More Services
     }
     
     static func registerScenes(container: Container) {
         UsersConfigurator.register(container: container)
-        
         // More Scenes
     }
 }
