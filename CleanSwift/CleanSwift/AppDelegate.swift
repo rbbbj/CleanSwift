@@ -11,7 +11,6 @@ import Swinject
 import SwinjectStoryboard
 import RealmSwift
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     fileprivate var resolver: Resolver?
@@ -41,4 +40,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 }
-
