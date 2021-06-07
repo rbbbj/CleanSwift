@@ -5,30 +5,14 @@ target 'CleanSwift' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Swinject'
-  pod 'SwinjectAutoregistration'
-  pod 'SwinjectStoryboard', :git => 'https://github.com/Swinject/SwinjectStoryboard.git', :branch => 'master'
   pod 'NVActivityIndicatorView'
   pod 'NVActivityIndicatorView/Extended'
   pod 'Alamofire', '~> 5.2'
   pod 'RealmSwift', '4.4.1'
   pod 'SwiftMessages'
 
-  #  #  #  #  #  Useful pods most likely be used in the future #  #  #  #  #
-#  pod 'IQKeyboardManagerSwift'
-#  pod 'RxSwift'
-#  pod 'RxCocoa'
-#  pod 'RxRealm'
-#  pod 'SwiftDate'
-#  pod 'SnapKit'
-
   target 'CleanSwiftTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'CleanSwiftUITests' do
-    # Pods for testing
-  end
-
 end

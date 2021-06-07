@@ -10,7 +10,23 @@ class UsersViewController: BaseViewController {
     var interactor: UsersBusinessLogic?
     var router: (NSObjectProtocol & UsersRoutingLogic & UsersDataPassing)?
     private var userCellModels: [UsersTableCellViewModel]?
+
+    // MARK: Object lifecycle
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        UsersConfigurator.shared.configure(self)
+    }
+
     // MARK: View lifecycle
     
     override func viewDidLoad() {

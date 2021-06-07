@@ -20,20 +20,6 @@
                ReferencedContainer = "container:CleanSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "678FAF8D24DD75D500EFD7FA"
-               BuildableName = "CleanSwiftTests.xctest"
-               BlueprintName = "CleanSwiftTests"
-               ReferencedContainer = "container:CleanSwift.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -46,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "678FAF8D24DD75D500EFD7FA"
+               BlueprintIdentifier = "67D0C6A0266E47DB00819157"
                BuildableName = "CleanSwiftTests.xctest"
                BlueprintName = "CleanSwiftTests"
                ReferencedContainer = "container:CleanSwift.xcodeproj">

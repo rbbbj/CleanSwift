@@ -8,15 +8,9 @@ protocol UsersBusinessLogic {
 protocol UsersDataStore { }
 
 class UsersInteractor: UsersBusinessLogic, UsersDataStore {
-    var presenter: UsersPresentationLogic
-    var usersRealmRepository: UsersRealmPersistable
+    var presenter: UsersPresentationLogic! = nil
+    var usersRealmRepository: UsersRealmPersistable! = nil
     private var networkingWorker = UsersNetworkingWorker()
-    
-    init(presenter: UsersPresentationLogic,
-         usersRealmRepository: UsersRealmPersistable) {
-        self.presenter = presenter
-        self.usersRealmRepository = usersRealmRepository
-    }
     
     func initialSetup() {
         presenter.displayLoadingProgress()
