@@ -21,7 +21,7 @@ struct Company {
         guard let name = entity.name,
             let catchPhrase = entity.catchPhrase,
             let bs = entity.bs else {
-                throw CustomError.dataError
+                throw DataLoadingError.invalidData
         }
 
         self.name = name

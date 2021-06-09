@@ -1,7 +1,9 @@
 import Alamofire
 
 class UsersService {
-    func fetchUsers(completionHandler: @escaping (_ users: [User]?, _ error: Error?) -> ()) {
+    typealias Handler = (Result<[User], DataLoadingError>) -> Void
+    
+    func fetchUsers(completionHandler: @escaping Handler) {
         AF
             .request(UsersNetworkingRouter.getAllUsers)
             .validate()
@@ -17,14 +19,19 @@ class UsersService {
                                     users.append(user)
                                 }
                             }
-                            completionHandler(users, nil)
+                            completionHandler(.success(users))
                         } catch {
-                            debugPrint("Decoding in getAllComments() failed with error: \(error.localizedDescription)")
+                            completionHandler(.failure(.invalidData))
                         }
                     }
-                case .failure(let error):
-                    completionHandler(nil, CustomError.dataError)
-                    debugPrint("getAllComments() response.result failure: ", error)
+                case .failure:
+                    var statusCode: String
+                    if let responseStatusCode = response.response?.statusCode {
+                        statusCode = String(responseStatusCode)
+                    } else {
+                        statusCode = "Unknown"
+                    }
+                    completionHandler(.failure(.networkFailure(statusCode: statusCode)))
                 }
         }
     }

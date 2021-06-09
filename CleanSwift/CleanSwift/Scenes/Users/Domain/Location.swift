@@ -15,7 +15,7 @@ struct Location {
     init(from entity: RMLocation) throws {
         guard let lat = entity.lat,
             let lng = entity.lng else {
-                throw CustomError.dataError
+                throw DataLoadingError.invalidData
         }
         
         self.lat = lat

@@ -35,21 +35,21 @@ private extension UsersInteractor {
     }
     
     func fetchUsersFromServer() {
-        networkingWorker.fetchUsers() { [weak self] users, error in
+        networkingWorker.fetchUsers() { [weak self] result in
             guard let self = self else { return }
             
-            if error != nil {
-                let error = BaseModels.Error.Response(message: error?.localizedDescription ?? "Data Error\nPlease try again.")
-                self.presenter.presentError(response: error)
-            } else {
-                guard let users = users else {
-                    return
-                }
-                
+            switch result {
+            case .success(let users):
                 self.save(users: users)
-                
+
                 let response = Users.InitialSetup.Response(users: users)
                 self.presenter.presentInitialSetup(response: response)
+            case .failure(.networkFailure(let statusCode)):
+                let error = BaseModels.Error.Response(message: DataLoadingError.networkFailure(statusCode: statusCode).localizedDescription)
+                self.presenter.presentError(response: error)
+            case .failure(.invalidData):
+                let error = BaseModels.Error.Response(message: DataLoadingError.invalidData.localizedDescription)
+                self.presenter.presentError(response: error)
             }
         }
     }

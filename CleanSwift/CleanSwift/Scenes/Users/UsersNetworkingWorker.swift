@@ -1,19 +1,23 @@
 import Alamofire
 
 class UsersNetworkingWorker {
-    let useMock = true
+    typealias Handler = (Result<[User], DataLoadingError>) -> Void
+    
     var usersService: UsersService
     
-    init() {
+    init(useMock: Bool = false) {
         useMock ? (usersService = UsersServiceMock()) : (usersService = UsersService())
     }
     
-    func fetchUsers(completionHandler: @escaping (_ users: [User]?, _ error: Error?) -> Void) {
-        usersService.fetchUsers { users, error in
-            if let error = error {
-                completionHandler(nil, error)
-            } else {
-                completionHandler(users, nil)
+    func fetchUsers(completionHandler: @escaping (Result<[User], DataLoadingError>) -> Void) {
+        usersService.fetchUsers { result in
+            switch result {
+            case .success(let users):
+                completionHandler(.success(users))
+            case.failure(.networkFailure(let statusCode)):
+                completionHandler(.failure(DataLoadingError.networkFailure(statusCode: statusCode)))
+            case.failure(.invalidData):
+                completionHandler(.failure(DataLoadingError.invalidData))
             }
         }
     }

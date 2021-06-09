@@ -23,7 +23,7 @@ struct Address {
         self.city = response.city
         self.zipcode = response.zipcode
         guard let lat = (response.geo?.lat), let lng = (response.geo?.lng) else {
-            throw CustomError.dataError
+            throw DataLoadingError.invalidData
         }
         self.geo = Location(lat: lat, lng: lng)
     }
@@ -34,7 +34,7 @@ struct Address {
             let city = entity.city,
             let zipcode = entity.zipcode,
             let geo = try entity.geo?.asDomain() else {
-                throw CustomError.dataError
+                throw DataLoadingError.invalidData
         }
 
         self.street = street

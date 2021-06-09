@@ -327,9 +327,9 @@
 		67D0C6AB266E4B7B00819157 /* ModelsTests */ = {
 			isa = PBXGroup;
 			children = (
+				67D0C6B0266E4B7B00819157 /* Helpers */,
 				67D0C6AC266E4B7B00819157 /* Stubs */,
 				67D0C6AE266E4B7B00819157 /* Tests */,
-				67D0C6B0266E4B7B00819157 /* Helpers */,
 			);
 			path = ModelsTests;
 			sourceTree = "<group>";

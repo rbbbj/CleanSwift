@@ -30,7 +30,7 @@ struct User {
         guard let geo = response.address?.geo,
               let lat = geo.lat,
               let lng = geo.lng else {
-            throw CustomError.dataError
+            throw DataLoadingError.invalidData
         }
         let location = Location(lat: lat, lng: lng)
         
@@ -38,7 +38,7 @@ struct User {
               let suite = response.address?.suite,
               let city = response.address?.city,
               let zipcode = response.address?.zipcode else {
-            throw CustomError.dataError
+            throw DataLoadingError.invalidData
         }
         let address = Address(street: street, suite: suite, city: city, zipcode: zipcode, geo: location)
         
@@ -46,7 +46,7 @@ struct User {
               let catchPhrase = response.company?.catchPhrase,
               let bs = response.company?.bs else {
             
-            throw CustomError.dataError
+            throw DataLoadingError.invalidData
         }
         let company = Company(name: name, catchPhrase: catchPhrase, bs: bs)
         
@@ -69,7 +69,7 @@ struct User {
             let website = entity.website,
             let address = try entity.address?.asDomain(),
             let company = try entity.company?.asDomain() else {
-                throw CustomError.dataError
+                throw DataLoadingError.invalidData
         }
 
         self.id = id

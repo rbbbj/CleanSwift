@@ -1,17 +1,17 @@
 import Foundation
 
-enum CustomError: Error {
-    case dataError
-    case customError(message: String)
+enum DataLoadingError: Error {
+    case networkFailure(statusCode: String)
+    case invalidData
 }
 
-extension CustomError: LocalizedError {
+extension DataLoadingError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-        case .dataError:
-            return NSLocalizedString("Data Error.\nPlease try again.", comment: "")
-        case .customError(let message):
-            return message
+        case .networkFailure(let statusCode):
+            return NSLocalizedString("Data Request Error." + "With Status Code" + " " + statusCode, comment: "")
+        case .invalidData:
+            return NSLocalizedString("Invalid Data Error", comment: "")
         }
     }
 }
