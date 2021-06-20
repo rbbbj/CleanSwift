@@ -1,7 +1,7 @@
 import Foundation
 
 class UsersServiceMock: UsersService {
-    typealias Handler = (Result<[User], DataLoadingError>) -> Void
+    typealias NetworkResult = (Result<[User], DataLoadingError>) -> Void
     
     private let json = """
     [
@@ -238,7 +238,7 @@ class UsersServiceMock: UsersService {
     ]
     """
     
-    override func fetchUsers(completionHandler: @escaping Handler) {
+    override func fetchUsers(completionHandler: @escaping NetworkResult) {
         guard let data = json.data(using: .utf8) else {
             completionHandler(.failure(DataLoadingError.invalidData))
             return

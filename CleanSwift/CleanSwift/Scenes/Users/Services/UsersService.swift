@@ -1,13 +1,13 @@
 import Alamofire
 
 class UsersService {
-    typealias Handler = (Result<[User], DataLoadingError>) -> Void
+    typealias NetworkResult = (Result<[User], DataLoadingError>) -> Void
     
-    func fetchUsers(completionHandler: @escaping Handler) {
+    func fetchUsers(completionHandler: @escaping NetworkResult) {
         AF
             .request(UsersNetworkingRouter.getAllUsers)
             .validate()
-            .responseJSON { response in
+            .response { response in
                 switch response.result {
                 case .success:
                     if let jsonData = response.data {

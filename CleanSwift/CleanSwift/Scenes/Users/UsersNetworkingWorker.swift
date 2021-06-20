@@ -1,7 +1,7 @@
 import Alamofire
 
 class UsersNetworkingWorker {
-    typealias Handler = (Result<[User], DataLoadingError>) -> Void
+    typealias NetworkResult = (Result<[User], DataLoadingError>) -> Void
     
     var usersService: UsersService
     
@@ -9,7 +9,7 @@ class UsersNetworkingWorker {
         useMock ? (usersService = UsersServiceMock()) : (usersService = UsersService())
     }
     
-    func fetchUsers(completionHandler: @escaping (Result<[User], DataLoadingError>) -> Void) {
+    func fetchUsers(completionHandler: @escaping NetworkResult) {
         usersService.fetchUsers { result in
             switch result {
             case .success(let users):
