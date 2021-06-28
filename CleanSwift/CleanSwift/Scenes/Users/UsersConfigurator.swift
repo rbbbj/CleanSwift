@@ -12,6 +12,7 @@ class UsersConfigurator: NSObject {
         viewController.router = router
         interactor.presenter = presenter
         interactor.usersRealmRepository = UsersRealmRepository()
+        interactor.networkingWorker = UsersNetworkingWorker(useMock: true)
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor

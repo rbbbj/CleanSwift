@@ -10,7 +10,7 @@ protocol UsersDataStore { }
 class UsersInteractor: UsersBusinessLogic, UsersDataStore {
     var presenter: UsersPresentationLogic! = nil
     var usersRealmRepository: UsersRealmPersistable! = nil
-    private var networkingWorker = UsersNetworkingWorker()
+    var networkingWorker: UsersNetworkingWorker! = nil
     
     func initialSetup() {
         presenter.displayLoadingProgress()

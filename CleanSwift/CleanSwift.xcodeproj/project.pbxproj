@@ -34,13 +34,13 @@
 		678FB00C24DD916400EFD7FA /* UsersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678FAFFF24DD916400EFD7FA /* UsersConfigurator.swift */; };
 		678FB00D24DD916400EFD7FA /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678FB00024DD916400EFD7FA /* UsersRouter.swift */; };
 		67CE7CC426711D0C00814DFE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE7CC326711D0C00814DFE /* main.swift */; };
-		67CE7CC626711D8500814DFE /* FakeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE7CC526711D8500814DFE /* FakeAppDelegate.swift */; };
 		67CE7CDE26711F9900814DFE /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 67CE7CD726711F9900814DFE /* users.json */; };
 		67CE7CDF26711F9900814DFE /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE7CD926711F9900814DFE /* UserModelTests.swift */; };
 		67CE7CE026711F9900814DFE /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE7CDB26711F9900814DFE /* XCTestCase.swift */; };
 		67D0C65A266DFFEA00819157 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C659266DFFEA00819157 /* UsersViewController.swift */; };
 		67D0C65D266E001100819157 /* UserstInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C65C266E001100819157 /* UserstInteractor.swift */; };
 		67D0C65E266E001100819157 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0C65B266E001100819157 /* UsersPresenter.swift */; };
+		67E080B1267F6C4200BE3BAF /* FakeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE7CC526711D8500814DFE /* FakeAppDelegate.swift */; };
 		67EF1833265A56C40085C29E /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EF1830265A549D0085C29E /* UserResponse.swift */; };
 		67EF1834265A56C90085C29E /* CompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EF182F265A549C0085C29E /* CompanyResponse.swift */; };
 		67EF1835265A56CC0085C29E /* AddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EF1832265A549D0085C29E /* AddressResponse.swift */; };
@@ -575,7 +575,7 @@
 				67EF1844265A5C590085C29E /* Company.swift in Sources */,
 				67EF183C265A58E50085C29E /* RMLocation.swift in Sources */,
 				67D0C65E266E001100819157 /* UsersPresenter.swift in Sources */,
-				67CE7CC626711D8500814DFE /* FakeAppDelegate.swift in Sources */,
+				67E080B1267F6C4200BE3BAF /* FakeAppDelegate.swift in Sources */,
 				678FAF7C24DD75D200EFD7FA /* AppDelegate.swift in Sources */,
 				678FAFC724DD810C00EFD7FA /* ErrorMessage.swift in Sources */,
 				678FAFC524DD810C00EFD7FA /* BaseModels.swift in Sources */,

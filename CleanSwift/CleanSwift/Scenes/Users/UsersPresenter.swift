@@ -1,5 +1,3 @@
-import UIKit
-
 protocol UsersPresentationLogic: BasePresentationLogic {
     func presentInitialSetup(response: Users.InitialSetup.Response)
 }
