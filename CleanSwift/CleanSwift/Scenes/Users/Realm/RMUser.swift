@@ -24,8 +24,8 @@ final class RMUser: Object {
         self.email = user.email
         self.phone = user.phone
         self.website = user.website
-        self.address = user.address?.asRealm()
-        self.company = user.company?.asRealm()
+        self.address = user.address.asRealm()
+        self.company = user.company.asRealm()
     }
 }
 

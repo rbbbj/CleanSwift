@@ -15,7 +15,7 @@ final class RMAddress: Object {
         self.suite = adress.suite
         self.city = adress.city
         self.zipcode = adress.zipcode
-        self.geo = adress.geo?.asRealm()
+        self.geo = adress.geo.asRealm()
     }
 }
 

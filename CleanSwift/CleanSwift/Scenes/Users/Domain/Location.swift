@@ -1,15 +1,20 @@
 struct Location {
-    let lat: String?
-    let lng: String?
+    let lat: String
+    let lng: String
     
     init(lat: String, lng: String) {
         self.lat = lat
         self.lng = lng
     }
     
-    init(from response: LocationResponse) {
-        self.lat = response.lat
-        self.lng = response.lng
+    init(from response: LocationResponse) throws {
+        guard let lat = response.lat,
+              let lng = response.lng else {
+            throw DataLoadingError.invalidData
+        }
+        
+        self.lat = lat
+        self.lng = lng
     }
     
     init(from entity: RMLocation) throws {
