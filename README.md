@@ -1,1 +1,1 @@
-Clean Swift architecture template
+Clean Swift (aka VIP) architecture template.
