@@ -32,7 +32,7 @@ class UserModelTests: XCTestCase {
     func testSetNewUserPhone() throws {
         sut.set(phone: "1-770-736-8031 xXXXXX")
         
-        XCTAssertEqual(sut.phone!, "1-770-736-8031 xXXXXX")
+        XCTAssertEqual(sut.phone, "1-770-736-8031 xXXXXX")
     }
     
     func testSetNewUserAddress() throws {
@@ -44,11 +44,11 @@ class UserModelTests: XCTestCase {
                                  geo: testLocation)
         sut.set(address: newAddress)
         
-        XCTAssertEqual(sut.address!.street!, "testStreet")
-        XCTAssertEqual(sut.address!.suite!, "testSuite")
-        XCTAssertEqual(sut.address!.city!, "testCity")
-        XCTAssertEqual(sut.address!.zipcode!, "testZipcode")
-        XCTAssertEqual(sut.address!.geo!.lat, "1.1111")
-        XCTAssertEqual(sut.address!.geo!.lng, "2.2222")
+        XCTAssertEqual(sut.address.street, "testStreet")
+        XCTAssertEqual(sut.address.suite, "testSuite")
+        XCTAssertEqual(sut.address.city, "testCity")
+        XCTAssertEqual(sut.address.zipcode, "testZipcode")
+        XCTAssertEqual(sut.address.geo.lat, "1.1111")
+        XCTAssertEqual(sut.address.geo.lng, "2.2222")
     }
 }
