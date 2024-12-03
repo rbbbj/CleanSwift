@@ -1,8 +1,8 @@
 def common_pods
     pod 'NVActivityIndicatorView'
     pod 'NVActivityIndicatorView/Extended'
-    pod 'Alamofire', '~> 5.2'
-    pod 'RealmSwift', '4.4.1'
+    pod 'Alamofire'
+    pod 'RealmSwift'
     pod 'SwiftMessages'
 end
 

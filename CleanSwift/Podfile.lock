@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (5.10.2)
+  - iOSSnapshotTestCase (8.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
+  - iOSSnapshotTestCase/Core (8.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (8.0.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (10.0.0)
+  - Nimble-Snapshots (9.4.0):
+    - Nimble-Snapshots/Core (= 9.4.0)
+  - Nimble-Snapshots/Core (9.4.0):
+    - iOSSnapshotTestCase (~> 8.0)
+    - Nimble
+  - NVActivityIndicatorView (5.2.0):
+    - NVActivityIndicatorView/Base (= 5.2.0)
+  - NVActivityIndicatorView/Base (5.2.0)
+  - NVActivityIndicatorView/Extended (5.2.0):
+    - NVActivityIndicatorView/Base
+  - Quick (5.0.1)
+  - Realm (20.0.0):
+    - Realm/Headers (= 20.0.0)
+  - Realm/Headers (20.0.0)
+  - RealmSwift (20.0.0):
+    - Realm (= 20.0.0)
+  - SwiftMessages (9.0.9):
+    - SwiftMessages/App (= 9.0.9)
+  - SwiftMessages/App (9.0.9)
+
+DEPENDENCIES:
+  - Alamofire
+  - Nimble
+  - Nimble-Snapshots
+  - NVActivityIndicatorView
+  - NVActivityIndicatorView/Extended
+  - Quick
+  - RealmSwift
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - iOSSnapshotTestCase
+    - Nimble
+    - Nimble-Snapshots
+    - NVActivityIndicatorView
+    - Quick
+    - Realm
+    - RealmSwift
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
+  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  Realm: a799b5f9145623fb0bfe149fe81422863631dd0f
+  RealmSwift: f8c4354ebd5053343e6ab9f4eda244145308a51e
+  SwiftMessages: 1a23aef303fa7bb26ad802880746cf8358e378fe
+
+PODFILE CHECKSUM: f631af15b911f42d4388496b482859f25b3c6a31
+
+COCOAPODS: 1.16.2
