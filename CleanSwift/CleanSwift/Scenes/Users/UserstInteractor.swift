@@ -35,21 +35,30 @@ private extension UsersInteractor {
     }
     
     func fetchUsersFromServer() {
-        networkingWorker.fetchUsers() { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let users):
+        Task {
+            do {
+                let users = try await networkingWorker.fetchUsers()
                 self.save(users: users)
 
                 let response = Users.InitialSetup.Response(users: users)
-                self.presenter.presentInitialSetup(response: response)
-            case .failure(.networkFailure(let statusCode)):
-                let error = BaseModels.Error.Response(message: DataLoadingError.networkFailure(statusCode: statusCode).localizedDescription)
-                self.presenter.presentError(response: error)
-            case .failure(.invalidData):
-                let error = BaseModels.Error.Response(message: DataLoadingError.invalidData.localizedDescription)
-                self.presenter.presentError(response: error)
+                await MainActor.run {
+                    self.presenter.presentInitialSetup(response: response)
+                }
+            } catch DataLoadingError.networkFailure(let statusCode) {
+                let errorResponse = BaseModels.Error.Response(message: "Network failure with status code: \(statusCode)")
+                await MainActor.run {
+                    self.presenter.presentError(response: errorResponse)
+                }
+            } catch DataLoadingError.invalidData {
+                let errorResponse = BaseModels.Error.Response(message: "Invalid data received from the server.")
+                await MainActor.run {
+                    self.presenter.presentError(response: errorResponse)
+                }
+            } catch {
+                let errorResponse = BaseModels.Error.Response(message: "An unknown error occurred.")
+                await MainActor.run {
+                    self.presenter.presentError(response: errorResponse)
+                }
             }
         }
     }

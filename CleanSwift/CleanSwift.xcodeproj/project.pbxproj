@@ -265,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				678FAFBC24DD810C00EFD7FA /* BaseImplementations */,
-				678FAFC124DD810C00EFD7FA /* Messages */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -279,13 +278,6 @@
 				678FAFBF24DD810C00EFD7FA /* BaseModels.swift */,
 			);
 			path = BaseImplementations;
-			sourceTree = "<group>";
-		};
-		678FAFC124DD810C00EFD7FA /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Messages;
 			sourceTree = "<group>";
 		};
 		678FAFE624DD81A200EFD7FA /* Networking */ = {
@@ -536,9 +528,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CleanSwiftTests/Pods-CleanSwiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CleanSwiftTests/Pods-CleanSwiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -575,9 +571,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CleanSwift/Pods-CleanSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CleanSwift/Pods-CleanSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
