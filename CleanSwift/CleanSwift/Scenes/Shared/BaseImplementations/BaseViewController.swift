@@ -1,5 +1,4 @@
 import UIKit
-import NVActivityIndicatorView
 
 protocol BaseDisplayLogic: AnyObject {
     func displayLoadingProgress()
@@ -7,6 +6,9 @@ protocol BaseDisplayLogic: AnyObject {
 }
 
 class BaseViewController: UIViewController, BaseDisplayLogic {
+    
+    private var activityIndicator: UIActivityIndicatorView?
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -17,7 +19,11 @@ class BaseViewController: UIViewController, BaseDisplayLogic {
     
     func displayError(viewModel: BaseModels.Error.ViewModel) {
         stopAnimating()
-        ErrorMessage.addCenteredMessage(title: viewModel.title, message: viewModel.message)
+
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        
     }
     
     func displayLoadingProgress() {
@@ -25,6 +31,22 @@ class BaseViewController: UIViewController, BaseDisplayLogic {
     }
 }
 
-// For NVActivityIndicatorView blocker
+// MARK: Activity Indicator Management
 
-extension BaseViewController: NVActivityIndicatorViewable { }
+extension BaseViewController {
+    func startAnimating() {
+        if activityIndicator == nil {
+            activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator?.center = view.center
+            activityIndicator?.hidesWhenStopped = true
+            if let activityIndicator = activityIndicator {
+                view.addSubview(activityIndicator)
+            }
+        }
+        activityIndicator?.startAnimating()
+    }
+    
+    func stopAnimating() {
+        activityIndicator?.stopAnimating()
+    }
+}

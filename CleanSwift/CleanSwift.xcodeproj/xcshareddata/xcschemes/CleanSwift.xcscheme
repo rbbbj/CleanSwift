@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67D0C6A0266E47DB00819157"
+               BlueprintIdentifier = "67CE7CCA26711F7000814DFE"
                BuildableName = "CleanSwiftTests.xctest"
                BlueprintName = "CleanSwiftTests"
                ReferencedContainer = "container:CleanSwift.xcodeproj">

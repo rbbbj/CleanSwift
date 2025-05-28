@@ -1,64 +1,69 @@
 PODS:
   - Alamofire (5.10.2)
+  - CwlCatchException (2.2.1):
+    - CwlCatchExceptionSupport (~> 2.2.1)
+  - CwlCatchExceptionSupport (2.2.1)
+  - CwlMachBadInstructionHandler (2.2.2)
+  - CwlPosixPreconditionTesting (2.2.2)
+  - CwlPreconditionTesting (2.2.2):
+    - CwlCatchException (~> 2.2.1)
+    - CwlMachBadInstructionHandler (~> 2.2.2)
+    - CwlPosixPreconditionTesting (~> 2.2.2)
   - iOSSnapshotTestCase (8.0.0):
     - iOSSnapshotTestCase/SwiftSupport (= 8.0.0)
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
-  - Nimble (10.0.0)
-  - Nimble-Snapshots (9.4.0):
-    - Nimble-Snapshots/Core (= 9.4.0)
-  - Nimble-Snapshots/Core (9.4.0):
+  - Nimble (13.7.1):
+    - CwlPreconditionTesting (~> 2.2.0)
+  - Nimble-Snapshots (9.8.0):
+    - Nimble-Snapshots/Core (= 9.8.0)
+  - Nimble-Snapshots/Core (9.8.0):
     - iOSSnapshotTestCase (~> 8.0)
-    - Nimble
-  - NVActivityIndicatorView (5.2.0):
-    - NVActivityIndicatorView/Base (= 5.2.0)
-  - NVActivityIndicatorView/Base (5.2.0)
-  - NVActivityIndicatorView/Extended (5.2.0):
-    - NVActivityIndicatorView/Base
-  - Quick (5.0.1)
-  - Realm (20.0.0):
-    - Realm/Headers (= 20.0.0)
-  - Realm/Headers (20.0.0)
-  - RealmSwift (20.0.0):
-    - Realm (= 20.0.0)
-  - SwiftMessages (9.0.9):
-    - SwiftMessages/App (= 9.0.9)
-  - SwiftMessages/App (9.0.9)
+    - Nimble (~> 13.0)
+  - Quick (7.6.2)
+  - Realm (20.0.2):
+    - Realm/Headers (= 20.0.2)
+  - Realm/Headers (20.0.2)
+  - RealmSwift (20.0.2):
+    - Realm (= 20.0.2)
 
 DEPENDENCIES:
   - Alamofire
   - Nimble
   - Nimble-Snapshots
-  - NVActivityIndicatorView
-  - NVActivityIndicatorView/Extended
   - Quick
   - RealmSwift
-  - SwiftMessages
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CwlCatchException
+    - CwlCatchExceptionSupport
+    - CwlMachBadInstructionHandler
+    - CwlPosixPreconditionTesting
+    - CwlPreconditionTesting
     - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
-    - NVActivityIndicatorView
     - Quick
     - Realm
     - RealmSwift
-    - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
+  CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
+  CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
+  CwlPosixPreconditionTesting: ecd095aa2129e740b44301c34571e8d85906fb88
+  CwlPreconditionTesting: 67a0047dd4de4382b93442c0e3f25207f984f35a
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
-  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
-  Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
-  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
-  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  Realm: a799b5f9145623fb0bfe149fe81422863631dd0f
-  RealmSwift: f8c4354ebd5053343e6ab9f4eda244145308a51e
-  SwiftMessages: 1a23aef303fa7bb26ad802880746cf8358e378fe
+  Nimble: 317d713c30c3336dd8571da1889f7ec3afc626e8
+  Nimble-Snapshots: 240ea76ee8e52dfc1387b8d0d9bf1db3420cabbd
+  Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
+  Realm: 395416e3b150a37ca12fee6477a2ec8c11f8a048
+  RealmSwift: 199fd4d7e86491d1147c662c6a36aa55136a54d0
 
-PODFILE CHECKSUM: f631af15b911f42d4388496b482859f25b3c6a31
+PODFILE CHECKSUM: b7c20fae3c80b5bae2339e2ef8ddd439263740c3
 
 COCOAPODS: 1.16.2
